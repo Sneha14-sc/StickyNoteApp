@@ -1,7 +1,7 @@
 
 import './App.css';
 import ListTodo from './components/ListTodo';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {} from 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
