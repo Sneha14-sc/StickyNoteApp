@@ -11,7 +11,7 @@ const EditTodo = ({modal, toggle, updateTask, taskObj}) => {
         
         const {value} = e.target
             setDescription(value);
-            setDate(d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear())+"||"+d.getHours+":"+d.getMinutes;
+            setDate(d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear()+" | "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds());
     }
 
     useEffect(() => {

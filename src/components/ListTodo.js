@@ -22,7 +22,8 @@ const ListTodo = () => {
             setDescription(value)
         }
         let d=new Date();
-        setDate(d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear())+"||"+d.getHours+":"+d.getMinutes;
+        setDate(d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear()+" | "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds());
+
 
     }
 
@@ -36,9 +37,9 @@ const ListTodo = () => {
     }, [])
 
     // to delete any note from webpage as well as local storage
-    const deleteTask = (index) => {
-        let check=confirm("Are you sure to proceed with deletion of note?"); // to confirm from user to delete the node
-        if(check){
+    const deleteTask = index => {
+          // to confirm from user to delete the node
+        if(window.confirm('Are your sure?')){
             let tempList = taskList
             tempList.splice(index, 1)
             localStorage.setItem("taskList", JSON.stringify(tempList))
