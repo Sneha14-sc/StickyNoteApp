@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/StickyNoteApp/static/css/main.f86c4df6.css",
-    "main.js": "/StickyNoteApp/static/js/main.5e2f6383.js",
+    "main.css": "/StickyNoteApp/static/css/main.fccb7979.css",
+    "main.js": "/StickyNoteApp/static/js/main.600d0946.js",
     "index.html": "/StickyNoteApp/index.html",
-    "main.f86c4df6.css.map": "/StickyNoteApp/static/css/main.f86c4df6.css.map",
-    "main.5e2f6383.js.map": "/StickyNoteApp/static/js/main.5e2f6383.js.map"
+    "main.fccb7979.css.map": "/StickyNoteApp/static/css/main.fccb7979.css.map",
+    "main.600d0946.js.map": "/StickyNoteApp/static/js/main.600d0946.js.map"
   },
   "entrypoints": [
-    "static/css/main.f86c4df6.css",
-    "static/js/main.5e2f6383.js"
+    "static/css/main.fccb7979.css",
+    "static/js/main.600d0946.js"
   ]
 }
