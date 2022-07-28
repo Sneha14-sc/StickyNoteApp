@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-
 import Card from './Card';
 import { Button, Input, FormGroup, Label, Col,Navbar,NavbarBrand, Nav } from 'reactstrap';
 
@@ -23,7 +22,7 @@ const ListTodo = () => {
             setDescription(value)
         }
         let d=new Date();
-        setDate(d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear());
+        setDate(d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear())+"||"+d.getHours+":"+d.getMinutes;
 
     }
 
@@ -38,14 +37,17 @@ const ListTodo = () => {
 
     // to delete any note from webpage as well as local storage
     const deleteTask = (index) => {
-        let tempList = taskList
-        tempList.splice(index, 1)
-        localStorage.setItem("taskList", JSON.stringify(tempList))
-        setTaskList(tempList)
-        window.location.reload()
+        let check=confirm("Are you sure to proceed with deletion of note?"); // to confirm from user to delete the node
+        if(check){
+            let tempList = taskList
+            tempList.splice(index, 1)
+            localStorage.setItem("taskList", JSON.stringify(tempList))
+            setTaskList(tempList)
+            window.location.reload()
+        }
     }
 
-    //while updating the note below function is called
+    //while updating the note below function is called where data will be updated in local storage as well
     const updateListArray = (obj, index) => {
         let tempList = taskList
         tempList[index] = obj
@@ -67,7 +69,7 @@ const ListTodo = () => {
     const handleSave = (e) => {
         e.preventDefault()
         
-        if(taskTitle === ""){
+        if(taskTitle === ""){               // to verfiy whether title was passed as input or not
             alert("Title cannot be empty.");
         }
         else{
@@ -76,10 +78,9 @@ const ListTodo = () => {
             taskObj["Description"] = description;
             taskObj["Date"] = date;
             saveTask(taskObj)
-            
+            alert("New Note added successfully");  // to confirm that the note has been added successfully
+            window.location.reload();
         }
-        alert("New Note added successfully");
-        window.location.reload();
     }
     return (
         <>

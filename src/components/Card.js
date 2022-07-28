@@ -4,6 +4,8 @@ import EditTodo from '../modals/EditTodo'
 const Card = ({taskObj, index, deleteTask, updateListArray}) => {
     const [modal, setModal] = useState(false);
     console.log(taskObj,index,deleteTask,updateListArray)
+
+    // this variable is created to set different color of each card
     const colors = [
         {
             primaryColor : "#5D93E1",
@@ -27,10 +29,12 @@ const Card = ({taskObj, index, deleteTask, updateListArray}) => {
         }
     ]
 
+    //  to open or close a modal window as true or false
     const toggle = () => {
         setModal(!modal);
     }
 
+    // the functions which are calling here are declared in ListTodo.js
     const updateTask = (obj) => {
         updateListArray(obj, index)
     }
